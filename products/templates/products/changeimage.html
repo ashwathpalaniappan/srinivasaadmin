@@ -1,0 +1,15 @@
+{% extends "products/base.html" %}
+{% block content %}
+{% load static %}
+<br><br><br>
+<center>
+    <img class="form-img" src="{% static 'products/images/avatar.png' %}">
+    <h2 class="dregistertitle">Change Image</h2>
+    <form action="changeimg"  method="post">
+        {% csrf_token %}
+        <input type="text" class="form-box" name="id" placeholder="Product ID"><br>
+        <input type="text" class="form-box" name="url" placeholder="Image URL"><br>
+        <input type="submit" class="general-btn" value="Change Image">
+    </form>
+</center>
+{% endblock content %}

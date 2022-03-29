@@ -1,0 +1,31 @@
+{% extends "products/base.html" %}
+{% block content %}
+<br><br><br><br><br>
+<center>
+{% if orders|length > 0 %}
+<table>
+    <tr>
+      <th>Id</th>
+      <th>Customer</th>
+      <th>Details</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+      <td>{{order.id}}</td>
+      <td>
+        {{ order.name }}<br>
+        Rs. {{ order.sub_total }},<br>
+        {{ order.address.city }} - {{ order.address.pincode }}<br>
+        <b>({{ order.date }})</b><br>
+      </td>
+      <td><a href="{% url 'order' order.id %}">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>No orders yet!</h1>
+{% endif %}
+</center>
+<br><br>
+
+{% endblock content %}

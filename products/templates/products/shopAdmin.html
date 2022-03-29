@@ -1,0 +1,11 @@
+{% extends "products/base.html" %}
+{% block content %}
+<br><br><br><br>
+<center>
+<a href='{% url 'currorders' %}'><h1>1. New Orders</h1></a>
+<a href='{% url 'oldorders' %}'><h1>2. Completed Orders</h1></a>
+<a href='{% url 'delorders' %}'><h1>3. Cancelled Orders</h1></a>
+<a href='{% url 'changeimg' %}'><h1>4. Change Product Image</h1></a>
+</center>
+<br><br><br>
+{% endblock content %}
